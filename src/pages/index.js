@@ -3,9 +3,13 @@ import SEO from "../components/seo"
 
 const IndexPage = () => {
   useEffect(() => {
-    navigate('/loginPage/');
-  }, []);
-  return null;
+	   navigate("/loginPage");
+	}, []);
+  return (
+  	<div>
+   	 <SEO title="Home" />
+ 	  </div>
+  )
 }
 
 export default IndexPage
