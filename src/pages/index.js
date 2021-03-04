@@ -1,15 +1,9 @@
 import React, {useEffect} from "react"
+import { navigate } from 'gatsby'
 import SEO from "../components/seo"
 
 const IndexPage = () => {
-  useEffect(() => {
-	   navigate("/loginPage");
-	}, []);
-  return (
-  	<div>
-   	 <SEO title="Home" />
- 	  </div>
-  )
+  return navigate('/loginPage/');
 }
 
 export default IndexPage
