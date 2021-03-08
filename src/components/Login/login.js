@@ -42,6 +42,14 @@ const Login = () => {
 
   return (
     <section className="py-6" id="login">
+    <div>
+            <img
+              alt="Company logo"
+              src="https://ik.imagekit.io/9xirfogsm6x/logo_5llfe-pOs.png"
+              class="avatar  rounded-circle avatar-sm"
+              height="75"
+            />
+     </div>
       <div className="container">
         <div className="row">
           <div className="col-md-6 mx-auto text-center">
