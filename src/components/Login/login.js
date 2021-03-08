@@ -48,6 +48,7 @@ const Login = () => {
               src="https://ik.imagekit.io/9xirfogsm6x/logo_5llfe-pOs.png"
               class="avatar  rounded-circle avatar-sm"
               height="75"
+              style = "text-align: center"
             />
      </div>
       <div className="container">
