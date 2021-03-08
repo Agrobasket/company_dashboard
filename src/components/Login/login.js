@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "../../styles/style.css"
+import "./login.css"
 import { Alert } from "react-bootstrap"
 import { navigate } from "gatsby"
 import { handleLogin } from "../../services/auth"
@@ -42,7 +43,7 @@ const Login = () => {
 
   return (
     <section className="py-6" id="login">
-    <div style = "text-align: center">
+    <div class="imgcontainer">
             <img
               alt="Company logo"
               src="https://ik.imagekit.io/9xirfogsm6x/logo_5llfe-pOs.png"
