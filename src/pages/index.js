@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import IndexComponent from "../components/Index/indexComponent"
+import IndexComponent from "../components/indexComponent"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
