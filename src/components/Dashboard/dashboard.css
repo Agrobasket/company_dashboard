@@ -4,6 +4,10 @@
 .circle-50 {
   border-radius: 15px;
 }
+
+.text-white {
+  color : white;
+}
 @media screen and (max-width: 480px) {
   .table-height {
     height: 0px;
