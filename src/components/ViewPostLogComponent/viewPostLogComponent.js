@@ -86,8 +86,6 @@ const SingleFarmerLog = ({ eventKey, data }) => {
     arrows: false,
   }
   const startDate = new Date(data.createdDate)
-  console.log(startDate.setMonth(getMonthFromString(data.post.startMonth)))
-  startDate.setMonth(getMonthFromString(data.post.startMonth) - 1, 1)
 
   const endDate = new Date(data.createdDate)
   endDate.setMonth(startDate.getMonth() + (data.post.duration - 1))
