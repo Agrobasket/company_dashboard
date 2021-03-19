@@ -85,14 +85,14 @@ const Dashboard = () => {
                       <p className="font-weight-bold mb-0 text-primary">
                         {companyInfo.companyName}
                       </p>
-                      <small class="d-block text-muted">
+                      <small class="d-block text-muted text-white">
                         {companyInfo.companyAddress}
                       </small>
                       <br />
-                      {companyInfo.companyAccountOwnerName} <br />{" "}
-                      {companyInfo.emailId} <br /> {companyInfo.phoneNumber}
-                      <br /> {companyInfo.companyType} Company
-                      <p className="mt-2">
+                      <p className = "text-white">{companyInfo.companyAccountOwnerName} </p> <br />{" "}
+                      <p className = "text-white">{companyInfo.emailId} </p> <br /> <p className = "text-white">{companyInfo.phoneNumber}</p>
+                      <br /> <p className = "text-white">{companyInfo.companyType} Company </p>
+                      <p className="mt-2 text-white">
                         Account Holder &ndash;{" "}
                         {companyInfo.bankAccountHolderName} <br />
                         IFSC Code &ndash; {companyInfo.bankIfscCode} <br />
