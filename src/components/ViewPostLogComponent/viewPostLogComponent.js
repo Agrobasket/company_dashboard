@@ -9,6 +9,8 @@ import {
   getProgressLog,
   closeTransaction,
   getCountOfPests,
+  updatePostAccept,
+  updatePostReject,
 } from "../../services/post"
 import "./viewPostLogComponent.css"
 
@@ -27,7 +29,7 @@ const getMonthFromString = mon => {
   return new Date(Date.parse(mon + " 1, 2021")).getMonth() + 1
 }
 
-const SliderCards = ({ index, key, img, title }) => {
+const SliderCards = ({ index, key, img, progressId, title,status}) => {
   const [show, setShow] = useState(false)
   const [pests, setPests] = useState("")
 
@@ -38,6 +40,20 @@ const SliderCards = ({ index, key, img, title }) => {
     setPests(res)
     setShow(true)
   }
+
+  const accepthandle = async () => {
+    const res = await updatePostAccept({ progId: progressId })
+    console.log(res + " <-----")
+    window.location.reload(false);
+  }
+
+  const rejecthandle = async () => {
+    const res = await updatePostReject({ progId: progressId })
+    console.log(res + " <-----")
+    //window.alert("Reject---> " + {key});
+    window.location.reload(false);
+  }
+
   return (
     <div className="card px-2" key={key}>
       <div className="bg-light align-items-center">
@@ -51,6 +67,30 @@ const SliderCards = ({ index, key, img, title }) => {
           <h5 className="card-title text-center font-weight-bold mb-2 text-primary">
             {title}
           </h5>
+          {index != 0 && status == "Pending" ? (
+            <button
+              type="submit"
+              name="action"
+              className="btn btn-dark btn-lg btn-block"
+              onClick={accepthandle}
+            >
+              Accept
+            </button>
+          ) : (
+            ""
+          )}
+          {index != 0 && status == "Pending" ? (
+            <button
+              type="submit"
+              name="action"
+              className="btn btn-dark btn-lg btn-block"
+              onClick={rejecthandle}
+            >
+              Reject
+            </button>
+          ) : (
+            ""
+          )}
           {index != 0 ? (
             <button
               type="submit"
@@ -162,7 +202,9 @@ const SingleFarmerLog = ({ eventKey, data }) => {
                         index={index}
                         key={progressData._id}
                         img={progressData.cropPhotoURL}
+                        progressId={progressData._id}
                         title={progressData.stage}
+                        status={progressData.status}
                       ></SliderCards>
                     )
                   })
