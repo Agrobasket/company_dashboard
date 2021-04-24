@@ -69,3 +69,23 @@ export const getCountOfPests = async imgUrl => {
   )
   return res.data;
 }
+
+export const updatePostAccept = async progId => {
+  console.log(progId['progId']);
+  const token = getToken()
+  const res = await axios.post(
+    "https://agrobasket.herokuapp.com/updateProgressStatusToAccept/"+progId['progId'],
+    { headers: { 'Authorization': token, 'Content-Type' : "application/json" } }
+  )
+  return res.data;
+}
+
+export const updatePostReject = async progId => {
+  console.log(progId);
+  const token = getToken()
+  const res = await axios.post(
+    "https://agrobasket.herokuapp.com/updateProgressStatusToReject/"+progId['progId'],
+    { headers: { 'Authorization': token, 'Content-Type' : "application/json" } }
+  )
+  return res.data;
+}
